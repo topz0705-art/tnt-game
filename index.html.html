@@ -21,7 +21,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -31,7 +30,6 @@
     overflow-x: hidden;
   }
 
-  /* ===== 動態背景 ===== */
   .bg-layer {
     position: fixed;
     inset: 0;
@@ -44,7 +42,6 @@
     pointer-events: none;
   }
 
-  /* ===== 粒子 ===== */
   #particles {
     position: fixed;
     inset: 0;
@@ -67,7 +64,6 @@
     100% { transform: translateY(-5vh) scale(1.2); opacity: 0; }
   }
 
-  /* ===== HERO ===== */
   .hero {
     position: relative;
     z-index: 2;
@@ -83,7 +79,6 @@
     margin-bottom: 20px;
   }
 
-  /* 光圈動畫 */
   .hero-logo-wrap::before,
   .hero-logo-wrap::after {
     content: '';
@@ -95,16 +90,8 @@
     animation: ringPulse 2.5s ease-out infinite;
   }
 
-  .hero-logo-wrap::before {
-    width: 220px; height: 220px;
-    animation-delay: 0s;
-  }
-
-  .hero-logo-wrap::after {
-    width: 260px; height: 260px;
-    animation-delay: 0.8s;
-    border-color: rgba(200,165,42,0.2);
-  }
+  .hero-logo-wrap::before { width: 220px; height: 220px; animation-delay: 0s; }
+  .hero-logo-wrap::after  { width: 260px; height: 260px; animation-delay: 0.8s; border-color: rgba(200,165,42,0.2); }
 
   @keyframes ringPulse {
     0%   { transform: translate(-50%,-50%) scale(0.8); opacity: 0.8; }
@@ -112,19 +99,14 @@
   }
 
   .hero-shark {
-    width: 200px;
-    height: 200px;
+    width: 200px; height: 200px;
     object-fit: contain;
     border-radius: 50%;
     border: 3px solid var(--gold-dark);
     background: radial-gradient(circle, #0a2a3a 0%, #040f0f 100%);
-    box-shadow:
-      0 0 0 6px rgba(0,229,255,0.08),
-      0 0 40px rgba(0,229,255,0.25),
-      0 0 80px rgba(200,165,42,0.15);
+    box-shadow: 0 0 0 6px rgba(0,229,255,0.08), 0 0 40px rgba(0,229,255,0.25), 0 0 80px rgba(200,165,42,0.15);
     animation: sharkFloat 3.5s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
+    position: relative; z-index: 1;
   }
 
   @keyframes sharkFloat {
@@ -170,7 +152,6 @@
   .hero-badge {
     margin-top: 16px;
     display: inline-flex;
-    gap: 0;
     background: rgba(200,165,42,0.08);
     border: 1px solid rgba(200,165,42,0.35);
     border-radius: 50px;
@@ -179,8 +160,7 @@
 
   .hero-badge span {
     padding: 8px 22px;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 15px; font-weight: 700;
     color: var(--gold);
     letter-spacing: 3px;
     border-right: 1px solid rgba(200,165,42,0.25);
@@ -190,10 +170,8 @@
   .hero-badge span:last-child { border-right: none; }
   .hero-badge span:hover { background: rgba(200,165,42,0.15); }
 
-  /* ===== 提示 ===== */
   .hint {
-    position: relative;
-    z-index: 2;
+    position: relative; z-index: 2;
     text-align: center;
     color: var(--teal);
     font-size: 13px;
@@ -203,13 +181,11 @@
   }
 
   @keyframes hintBlink {
-    0%,100% { opacity:1; } 50% { opacity:0.35; }
+    0%,100%{ opacity:1; } 50%{ opacity:0.35; }
   }
 
-  /* ===== GRID ===== */
   .grid {
-    position: relative;
-    z-index: 2;
+    position: relative; z-index: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
@@ -218,7 +194,6 @@
     padding: 0 16px 60px;
   }
 
-  /* ===== CARD ===== */
   .card {
     background: linear-gradient(145deg, #0e3232 0%, #071c1c 65%, #0a2618 100%);
     border: 1px solid rgba(0,229,255,0.12);
@@ -227,14 +202,11 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
-                box-shadow 0.35s ease,
-                border-color 0.35s ease;
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease, border-color 0.35s ease;
     opacity: 0;
     animation: cardIn 0.7s ease forwards;
   }
 
-  /* 頂部金線 */
   .card::before {
     content: '';
     position: absolute;
@@ -245,7 +217,6 @@
     opacity: 0.7;
   }
 
-  /* 底部漸層光 */
   .card::after {
     content: '';
     position: absolute;
@@ -254,7 +225,6 @@
     pointer-events: none;
   }
 
-  /* 掃光 */
   .shine {
     position: absolute;
     top: 0; left: -120%;
@@ -266,7 +236,6 @@
 
   .card:hover { transform: translateY(-8px) scale(1.025); }
   .card:hover .shine { left: 130%; }
-
   .card:hover {
     box-shadow: 0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(0,229,255,0.2), 0 0 30px rgba(0,229,255,0.08);
     border-color: rgba(0,229,255,0.3);
@@ -278,7 +247,6 @@
     border-color: rgba(200,165,42,0.5);
   }
 
-  /* 卡片進場 */
   @keyframes cardIn {
     from { opacity:0; transform:translateY(35px) scale(0.97); }
     to   { opacity:1; transform:translateY(0) scale(1); }
@@ -294,7 +262,6 @@
   .card:nth-child(8){animation-delay:0.75s}
   .card:nth-child(9){animation-delay:0.85s}
 
-  /* ===== 卡片 Logo ===== */
   .card-logo {
     display: flex;
     align-items: center;
@@ -304,8 +271,7 @@
   }
 
   .card-shark {
-    width: 36px;
-    height: 36px;
+    width: 36px; height: 36px;
     object-fit: contain;
     border-radius: 50%;
     border: 1.5px solid var(--gold-dark);
@@ -315,52 +281,19 @@
   }
 
   .logo-texts { display: flex; flex-direction: column; align-items: center; }
+  .logo-tnt   { font-size: 18px; font-weight: 900; color: var(--gold); letter-spacing: 3px; line-height: 1; text-shadow: 0 0 8px rgba(240,208,96,0.4); }
+  .logo-game  { font-size: 8px; font-weight: 700; color: var(--cyan); letter-spacing: 4px; text-shadow: 0 0 6px rgba(0,229,255,0.5); }
 
-  .logo-tnt {
-    font-size: 18px;
-    font-weight: 900;
-    color: var(--gold);
-    letter-spacing: 3px;
-    line-height: 1;
-    text-shadow: 0 0 8px rgba(240,208,96,0.4);
-  }
-
-  .logo-game {
-    font-size: 8px;
-    font-weight: 700;
-    color: var(--cyan);
-    letter-spacing: 4px;
-    text-shadow: 0 0 6px rgba(0,229,255,0.5);
-  }
-
-  /* ===== 卡片標題 ===== */
-  .card-title-zh {
-    font-size: clamp(17px, 2vw, 22px);
-    font-weight: 900;
-    color: var(--gold);
-    text-align: center;
-    text-shadow: 0 0 8px rgba(240,208,96,0.3);
-    line-height: 1.2;
-  }
-
-  .card-title-en {
-    font-size: 9.5px;
-    font-weight: 600;
-    color: var(--teal);
-    text-align: center;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-  }
+  .card-title-zh { font-size: clamp(17px,2vw,22px); font-weight: 900; color: var(--gold); text-align: center; text-shadow: 0 0 8px rgba(240,208,96,0.3); line-height: 1.2; }
+  .card-title-en { font-size: 9.5px; font-weight: 600; color: var(--teal); text-align: center; letter-spacing: 2px; margin-bottom: 8px; }
 
   .divider {
-    width: 65%;
-    height: 1px;
+    width: 65%; height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold-dark), var(--cyan), var(--gold-dark), transparent);
     margin: 4px auto 10px;
     opacity: 0.6;
   }
 
-  /* ===== 預覽標籤 ===== */
   .card-preview { display: flex; flex-direction: column; gap: 5px; }
 
   .prev-tag {
@@ -376,12 +309,8 @@
     transition: background 0.3s, border-color 0.3s;
   }
 
-  .card:hover .prev-tag {
-    background: rgba(0,229,255,0.08);
-    border-color: rgba(0,229,255,0.2);
-  }
+  .card:hover .prev-tag { background: rgba(0,229,255,0.08); border-color: rgba(0,229,255,0.2); }
 
-  /* ===== 展開內容 ===== */
   .card-detail {
     max-height: 0;
     overflow: hidden;
@@ -392,11 +321,9 @@
   .card.active .card-detail { max-height: 700px; opacity: 1; }
   .card.active .card-preview { display: none; }
 
-  /* ===== 箭頭 ===== */
   .card-arrow {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
+    bottom: 10px; left: 50%;
     transform: translateX(-50%);
     color: var(--gold-dark);
     font-size: 14px;
@@ -409,25 +336,12 @@
     50%    { transform:translateX(-50%) translateY(4px); }
   }
 
-  .card.active .card-arrow {
-    animation: none;
-    transform: translateX(-50%) rotate(180deg);
-  }
+  .card.active .card-arrow { animation: none; transform: translateX(-50%) rotate(180deg); }
 
-  /* ===== 頁碼 ===== */
-  .page-num {
-    position: absolute;
-    bottom: 10px;
-    right: 14px;
-    font-size: 10px;
-    color: #3a6a5a;
-  }
+  .page-num { position: absolute; bottom: 10px; right: 14px; font-size: 10px; color: #3a6a5a; }
 
-  /* ===== 內容元件 ===== */
   .info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
+    display: flex; align-items: flex-start; gap: 8px;
     padding: 8px 10px;
     background: rgba(255,255,255,0.03);
     border-radius: 8px;
@@ -435,14 +349,12 @@
     margin-bottom: 6px;
   }
 
-  .ii-icon { font-size: 17px; min-width: 22px; margin-top: 1px; }
+  .ii-icon  { font-size: 17px; min-width: 22px; margin-top: 1px; }
   .ii-label { font-size: 12px; font-weight: 700; color: var(--gold); margin-bottom: 2px; }
   .ii-desc  { font-size: 11px; color: var(--text-dim); line-height: 1.55; }
 
   .num-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
+    display: flex; align-items: flex-start; gap: 8px;
     padding: 7px 10px;
     background: rgba(255,255,255,0.03);
     border-radius: 8px;
@@ -483,9 +395,7 @@
   }
 
   .comm-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
     padding: 6px 10px;
     background: rgba(255,255,255,0.03);
     border-radius: 8px;
@@ -496,9 +406,7 @@
   .cr-val   { font-size: 10.5px; font-weight: 700; color: var(--gold); }
 
   .fee-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; align-items: center; gap: 8px;
     padding: 7px 10px;
     background: rgba(255,255,255,0.03);
     border-left: 2px solid var(--gold-dark);
@@ -516,20 +424,28 @@
     background: rgba(0,229,255,0.03);
     border-left: 2px solid var(--teal-dark);
     border-radius: 6px;
-    font-size: 11px;
-    color: var(--text-dim);
+    font-size: 11px; color: var(--text-dim);
     margin-bottom: 4px;
   }
 
   .ar-row strong { color: var(--gold); }
 
-  /* ===== 封面卡片 ===== */
+  .notice-bar {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: rgba(200,165,42,0.08);
+    border: 1px solid rgba(200,165,42,0.25);
+    border-radius: 8px;
+    font-size: 11px;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
   .card-cover {
     cursor: default;
     background: linear-gradient(145deg, #102e2e 0%, #071c1c 70%, #0a2618 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; flex-direction: column; align-items: center;
     text-align: center;
     padding-bottom: 28px;
   }
@@ -566,33 +482,22 @@
 
   .cover-title {
     font-size: clamp(14px,1.8vw,18px);
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1.3;
-    margin: 6px 0 2px;
+    font-weight: 900; color: var(--gold);
+    line-height: 1.3; margin: 6px 0 2px;
   }
 
-  .cover-sub {
-    font-size: 11px;
-    color: var(--teal);
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-  }
+  .cover-sub { font-size: 11px; color: var(--teal); letter-spacing: 2px; margin-bottom: 10px; }
 
-  .cover-tags {
-    display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
-  }
+  .cover-tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
 
   .ctag {
     background: rgba(200,165,42,0.12);
     border: 1px solid rgba(200,165,42,0.35);
     border-radius: 20px;
     padding: 3px 12px;
-    font-size: 12px; font-weight: 700;
-    color: var(--gold);
+    font-size: 12px; font-weight: 700; color: var(--gold);
   }
 
-  /* ===== Footer ===== */
   .footer {
     position: relative; z-index: 2;
     text-align: center;
@@ -603,11 +508,7 @@
     letter-spacing: 1px;
   }
 
-  /* ===== RWD ===== */
-  @media(max-width:900px){
-    .grid{ grid-template-columns:repeat(2,1fr); gap:10px; }
-  }
-
+  @media(max-width:900px){ .grid{ grid-template-columns:repeat(2,1fr); gap:10px; } }
   @media(max-width:520px){
     .grid{ grid-template-columns:1fr; }
     .hero-shark{ width:150px; height:150px; }
@@ -621,11 +522,10 @@
 <div class="bg-layer"></div>
 <div id="particles"></div>
 
-<!-- ===== HERO ===== -->
 <div class="hero">
   <div class="hero-logo-wrap">
     <img src="shark.png" alt="TNT GAME" class="hero-shark"
-         onerror="this.style.background='radial-gradient(circle,#1a4a4a,#040f0f)';this.alt='🦈'">
+         onerror="this.style.background='radial-gradient(circle,#1a4a4a,#040f0f)'">
   </div>
   <div class="hero-tnt">TNT</div>
   <div class="hero-game">G &nbsp; A &nbsp; M &nbsp; E</div>
@@ -637,14 +537,12 @@
 
 <p class="hint">▼ &nbsp; 點擊卡片查看詳細內容 &nbsp; ▼</p>
 
-<!-- ===== GRID ===== -->
 <div class="grid">
 
   <!-- 01 封面 -->
   <div class="card card-cover">
     <div class="shine"></div>
-    <img src="shark.png" alt="TNT" class="cover-shark"
-         onerror="this.style.display='none'">
+    <img src="shark.png" alt="TNT" class="cover-shark" onerror="this.style.display='none'">
     <div class="cover-tnt">TNT</div>
     <div class="cover-game">G A M E</div>
     <div class="cover-title">代理共創雙贏企劃</div>
@@ -662,10 +560,7 @@
     <div class="shine"></div>
     <div class="card-logo">
       <img src="shark.png" class="card-shark" onerror="this.style.display='none'">
-      <div class="logo-texts">
-        <div class="logo-tnt">TNT</div>
-        <div class="logo-game">G A M E</div>
-      </div>
+      <div class="logo-texts"><div class="logo-tnt">TNT</div><div class="logo-game">G A M E</div></div>
     </div>
     <div class="card-title-zh">平台介紹</div>
     <div class="card-title-en">TNT 寶萊娛樂城</div>
@@ -701,10 +596,7 @@
     <div class="shine"></div>
     <div class="card-logo">
       <img src="shark.png" class="card-shark" onerror="this.style.display='none'">
-      <div class="logo-texts">
-        <div class="logo-tnt">TNT</div>
-        <div class="logo-game">G A M E</div>
-      </div>
+      <div class="logo-texts"><div class="logo-tnt">TNT</div><div class="logo-game">G A M E</div></div>
     </div>
     <div class="card-title-zh">服務承諾與願景</div>
     <div class="card-title-en">PROMISE &amp; VISION</div>
@@ -740,10 +632,7 @@
     <div class="shine"></div>
     <div class="card-logo">
       <img src="shark.png" class="card-shark" onerror="this.style.display='none'">
-      <div class="logo-texts">
-        <div class="logo-tnt">TNT</div>
-        <div class="logo-game">G A M E</div>
-      </div>
+      <div class="logo-texts"><div class="logo-tnt">TNT</div><div class="logo-game">G A M E</div></div>
     </div>
     <div class="card-title-zh">代理政策</div>
     <div class="card-title-en">AGENCY POLICY</div>
@@ -779,10 +668,7 @@
     <div class="shine"></div>
     <div class="card-logo">
       <img src="shark.png" class="card-shark" onerror="this.style.display='none'">
-      <div class="logo-texts">
-        <div class="logo-tnt">TNT</div>
-        <div class="logo-game">G A M E</div>
-      </div>
+      <div class="logo-texts"><div class="logo-tnt">TNT</div><div class="logo-game">G A M E</div></div>
     </div>
     <div class="card-title-zh">傭金計算說明</div>
     <div class="card-title-en">COMMISSION CALCULATION</div>
@@ -823,10 +709,7 @@
     <div class="shine"></div>
     <div class="card-logo">
       <img src="shark.png" class="card-shark" onerror="this.style.display='none'">
-      <div class="logo-texts">
-        <div class="logo-tnt">TNT</div>
-        <div class="logo-game">G A M E</div>
-      </div>
+      <div class="logo-texts"><div class="logo-tnt">TNT</div><div class="logo-game">G A M E</div></div>
     </div>
     <div class="card-title-zh">金流費用與代理掛帳</div>
     <div class="card-title-en">PAYMENT FEES &amp; ARREARS</div>
@@ -853,8 +736,9 @@
       </div>
       <div class="ar-title">📋 掛帳規則</div>
       <div class="ar-row"><strong>規則 1：</strong>當月連三日維持負餘利，需清零。</div>
-      <div class="ar-row"><strong>規則 2：</strong>當月遊戲負盈利 30A 者，需清零。</div>
+      <div class="ar-row"><strong>規則 2：</strong>當月達負盈利 30A 者，需清零。</div>
       <div class="ar-row"><strong>規則 3：</strong>當月未達 300 萬有效流水者，需清零。</div>
+      <div class="notice-bar">⚠️ 若市場動盪，本公司保有最後異動權</div>
     </div>
     <div class="card-arrow">▼</div>
     <div class="page-num">06 / 09</div>
@@ -865,10 +749,7 @@
     <div class="shine"></div>
     <div class="card-logo">
       <img src="shark.png" class="card-shark" onerror="this.style.display='none'">
-      <div class="logo-texts">
-        <div class="logo-tnt">TNT</div>
-        <div class="logo-game">G A M E</div>
-      </div>
+      <div class="logo-texts"><div class="logo-tnt">TNT</div><div class="logo-game">G A M E</div></div>
     </div>
     <div class="card-title-zh">代理責任</div>
     <div class="card-title-en">AGENT RESPONSIBILITIES</div>
@@ -903,10 +784,7 @@
     <div class="shine"></div>
     <div class="card-logo">
       <img src="shark.png" class="card-shark" onerror="this.style.display='none'">
-      <div class="logo-texts">
-        <div class="logo-tnt">TNT</div>
-        <div class="logo-game">G A M E</div>
-      </div>
+      <div class="logo-texts"><div class="logo-tnt">TNT</div><div class="logo-game">G A M E</div></div>
     </div>
     <div class="card-title-zh">跳線及轉線規則</div>
     <div class="card-title-en">PROMOTION GUIDELINES</div>
@@ -942,10 +820,7 @@
     <div class="shine"></div>
     <div class="card-logo">
       <img src="shark.png" class="card-shark" onerror="this.style.display='none'">
-      <div class="logo-texts">
-        <div class="logo-tnt">TNT</div>
-        <div class="logo-game">G A M E</div>
-      </div>
+      <div class="logo-texts"><div class="logo-tnt">TNT</div><div class="logo-game">G A M E</div></div>
     </div>
     <div class="card-title-zh">代理人須知</div>
     <div class="card-title-en">AGENCY TERMS</div>
@@ -983,15 +858,14 @@
 </div>
 
 <script>
-// ===== 粒子 =====
 (function(){
   const c = document.getElementById('particles');
   const colors = ['#f0d060','#00e5ff','#7abfaa','#c8a52a'];
   for(let i=0;i<35;i++){
-    const p=document.createElement('div');
-    p.className='pt';
-    const s=(2+Math.random()*4)+'px';
-    p.style.cssText=`
+    const p = document.createElement('div');
+    p.className = 'pt';
+    const s = (2+Math.random()*4)+'px';
+    p.style.cssText = `
       left:${Math.random()*100}%;
       width:${s}; height:${s};
       background:${colors[Math.floor(Math.random()*colors.length)]};
@@ -1003,10 +877,9 @@
   }
 })();
 
-// ===== 卡片展開 =====
 function toggleCard(card){
   const wasActive = card.classList.contains('active');
-  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
   if(!wasActive) card.classList.add('active');
 }
 </script>
